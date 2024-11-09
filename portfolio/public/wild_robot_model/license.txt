@@ -1,0 +1,11 @@
+Model Information:
+* title:	Wild Robot Model
+* source:	https://sketchfab.com/3d-models/wild-robot-model-70aecb72d8044529bda25f11f48ac050
+* author:	soogee15 (https://sketchfab.com/soogee15)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Wild Robot Model" (https://sketchfab.com/3d-models/wild-robot-model-70aecb72d8044529bda25f11f48ac050) by soogee15 (https://sketchfab.com/soogee15) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

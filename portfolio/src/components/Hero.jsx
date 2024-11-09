@@ -151,9 +151,21 @@ const Hero = () => {
   </div>
 
   <div>
-    <h1 className={`${styles.heroHeadText} text-white text-4xl md:text-5xl font-extrabold leading-tight tracking-wide`}>
-      Hi, I'm <span className="text-[#5271ff] hover:text-[#3a5bfd] transition-colors duration-300">Induru Udantha</span>
-    </h1>
+    <style>{`/* Define the animation keyframes */
+              @keyframes fadeInOut {
+              0%, 100% { opacity: 0; transform: translateY(-10px); }
+              50% { opacity: 1; transform: translateY(0); }
+              }
+
+              /* Apply the animation */
+              .textAnimation {
+                animation: fadeInOut 4.5s ease-in-out infinite;
+              }
+      `}</style>
+  <h1 className={`${styles.heroHeadText} text-white text-4xl md:text-5xl font-extrabold leading-tight tracking-wide textAnimation`}>
+  Hi, I'm <span className="text-[#5271ff] hover:text-[#3a5bfd] transition-colors duration-300">Induru Udantha</span>
+</h1>
+
     <p className={`${styles.heroSubText} mt-2 text-white-100 text-lg md:text-xl leading-relaxed opacity-90`}>
       I develop 3D visuals, user <br className="sm:block hidden" />
       interfaces and web applications
@@ -165,10 +177,10 @@ const Hero = () => {
         <img src={gitHub} alt="GitHub" className="w-8 h-8 hover:animate-spin" />
       </a>
       <a href="https://www.linkedin.com/in/yourusername/" target="_blank" rel="noopener noreferrer" className="transition-transform transform hover:scale-110 duration-300">
-        <img src={linkedin} alt="LinkedIn" className="w-8 h-8 hover:animate-spin" />
+        <img src={linkedin} alt="LinkedIn" className="w-9 h-9 hover:animate-spin" />
       </a>
       <a href="https://www.facebook.com/yourusername" target="_blank" rel="noopener noreferrer" className="transition-transform transform hover:scale-110 duration-300">
-        <img src={facebook} alt="Facebook" className="w-8 h-8 hover:animate-spin" />
+        <img src={facebook} alt="Facebook" className="w-9 h-9 hover:animate-spin" />
       </a>
       <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer" className="transition-transform transform hover:scale-110 duration-300">
         <img src={whatsApp} alt="WhatsApp" className="w-8 h-8 hover:animate-spin" />

@@ -24,7 +24,7 @@ const Hero = () => {
       canvas.height = banner.offsetHeight;
 
       // Reinitialize stars with more complex properties
-      stars = Array.from({ length: 200 }, () => ({
+      stars = Array.from({ length: 250 }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         size: Math.random() * 2 + 1, // Initial random size
@@ -50,7 +50,7 @@ const Hero = () => {
 
         // Keep the stars within the canvas bounds
         if (star.x < 0) star.x = canvas.width;
-        if (star.x > canvas.width) star.x = 0;
+        if (star.x > canvas.width) star.x =0;
         if (star.y < 0) star.y = canvas.height;
         if (star.y > canvas.height) star.y = 0;
 
@@ -86,7 +86,7 @@ const Hero = () => {
         const distance = Math.sqrt((mouseX - star.x) ** 2 + (mouseY - star.y) ** 2);
         if (distance < 200) { // Effects will appear when mouse is closer
           ctx.strokeStyle = star.color;
-          ctx.lineWidth = 1;
+          ctx.lineWidth = 6;
           ctx.beginPath();
           ctx.moveTo(star.x, star.y);
           ctx.lineTo(mouseX, mouseY);
@@ -144,7 +144,7 @@ const Hero = () => {
     <section className="relative w-full h-screen mx-auto">
       <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full" />
       
-      <div className={`absolute inset-0 top-[170px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
+      <div className={`absolute inset-0 top-[180px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
   <div className="flex flex-col justify-center items-center mt-5">
     <div className="w-5 h-5 rounded-full bg-[#5271ff] shadow-xl animate-bounce" />
     <div className="w-1 sm:h-80 h-40 violet-gradient opacity-75 hover:opacity-100 transition-opacity duration-300" />
@@ -166,7 +166,9 @@ const Hero = () => {
   Hi, I'm <span className="text-[#5271ff] hover:text-[#3a5bfd] transition-colors duration-300">Induru Udantha</span>
 </h1>
 
-    <p className={`${styles.heroSubText} mt-2 text-white-100 text-lg md:text-xl leading-relaxed opacity-90`}>
+    <p className={`${styles.heroSubText} mt-2 text-white-100 text-lg md:text-xl leading-relaxed opacity-60`}>
+      I am an undergraduate student in the<br className="sm:block hidden" /> 
+      Faculty of Computing - SLIIT...<br className="sm:block hidden" />
       I develop 3D visuals, user <br className="sm:block hidden" />
       interfaces and web applications
     </p>

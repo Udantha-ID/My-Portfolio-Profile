@@ -1,30 +1,37 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
 const Contact = () => {
   const formRef = useRef();
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
+
+  const particlesInit = async (main) => {
+    await loadFull(main);
+  };
+
+  const particleOptions = {
+    fullScreen: { enable: false },
+    particles: {
+      number: { value: 50, density: { enable: true, area: 800 } },
+      color: { value: "#ffffff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.5 },
+      size: { value: 3, random: true },
+      move: { enable: true, speed: 0.6, direction: "none", outMode: "bounce" },
+    },
+  };
 
   const handleChange = (e) => {
     const { target } = e;
     const { name, value } = target;
-
-    setForm({
-      ...form,
-      [name]: value,
-    });
+    setForm({ ...form, [name]: value });
   };
 
   const handleSubmit = (e) => {
@@ -48,29 +55,30 @@ const Contact = () => {
         () => {
           setLoading(false);
           alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
+          setForm({ name: "", email: "", message: "" });
         },
         (error) => {
           setLoading(false);
           console.error(error);
-
           alert("Ahh, something went wrong. Please try again.");
         }
       );
   };
 
   return (
-    <div className="w-full xl:w-[1350px] h-[500px] xl:h-[720px] xl:mt-10 flex xl:flex-row gap-2 overflow-hidden px-100">
+    <div className="relative w-full xl:w-[1350px] h-[500px] xl:h-[720px] xl:mt-10 flex xl:flex-row gap-2 overflow-hidden px-100">
+      {/* Background Animation */}
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={particleOptions}
+        className="absolute top-0 left-0 w-full h-full z-0"
+      />
 
       {/* Contact Form Section */}
       <motion.div
         variants={slideIn("left", "tween", 0.3, 1)}
-        className="flex-1 xl:flex-[0.6] bg-gradient-to-r from-blue-900 to-black-800 p-10 rounded-xl shadow-xl transform transition-all hover:scale-105"
+        className="flex-1 xl:flex-[0.6] bg-gradient-to-r from-blue-900 to-black-800 p-10 rounded-xl shadow-xl transform transition-all hover:scale-105 z-10 relative"
       >
         <p className={`${styles.sectionSubText} text-yellow-400`}>Get in touch</p>
         <h3 className={`${styles.sectionHeadText} text-white font-extrabold text-3xl`}>Contact</h3>
@@ -128,7 +136,7 @@ const Contact = () => {
       {/* Earth Canvas Section */}
       <motion.div
         variants={slideIn("right", "tween", 0.3, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[600px] h-[400px] w-full bg-gradient-to-r from-black-800 to-blue-700 rounded-xl shadow-lg transform transition-all hover:scale-105"
+        className="xl:flex-1 xl:h-auto md:h-[600px] h-[400px] w-full bg-gradient-to-r from-black-800 to-blue-700 rounded-xl shadow-lg transform transition-all hover:scale-105 z-10 relative"
       >
         {/* <EarthCanvas /> */}
       </motion.div>

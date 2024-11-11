@@ -198,9 +198,9 @@ import {
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "Vehicle Service Center",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "A web-based platform that enables users to search, book, and manage vehicle service appointments with various providers, offering a convenient and efficient solution for all maintenance and repair needs.",
       tags: [
         {
           name: "react",
@@ -215,20 +215,20 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: carrent,
-      source_code_link: "https://github.com/",
+      image: carrent,jobit,
+      source_code_link: "https://github.com/Udantha-ID/mr.Automotive",
     },
     {
-      name: "Job IT",
+      name: "Event Plan",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "An event planning system that helps users organize and manage events, track schedules, and send invitations. It allows users to view event details, RSVP, and receive reminders for upcoming events.",
       tags: [
         {
-          name: "react",
+          name: "java",
           color: "blue-text-gradient",
         },
         {
-          name: "restapi",
+          name: "SSQl",
           color: "green-text-gradient",
         },
         {
@@ -237,19 +237,19 @@ import {
         },
       ],
       image: jobit,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/Udantha-ID/Event-plane",
     },
     {
-      name: "Trip Guide",
+      name: "Online Game",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "An online game system built with Java, compete in real-time, track scores, and view leaderboards. It features multiplayer support, player profiles, and achievements for a personalized experience.",
       tags: [
         {
-          name: "nextjs",
+          name: "java",
           color: "blue-text-gradient",
         },
         {
-          name: "supabase",
+          name: "SSQL",
           color: "green-text-gradient",
         },
         {
@@ -258,7 +258,7 @@ import {
         },
       ],
       image: tripguide,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/Udantha-ID/Online-Game",
     },
   ];
   

@@ -11,7 +11,7 @@ const NewServiceCard = ({ index, title, icon }) => (
   <Tilt className="xs:w-[300px] w-full">
     <motion.div
       variants={fadeIn("left", "spring", index * 0.5, 0.65)}
-      className="w-full green-pink p-[1px] rounded-[15px] shadow-card"
+      className="w-full white p-[1px] rounded-[25px] shadow-card"
     >
       <div
         options={{
@@ -24,7 +24,7 @@ const NewServiceCard = ({ index, title, icon }) => (
         <img
           src={icon}
           alt="web-development"
-          className="w-20 h-20 object-contain"
+          className="w-21 h-21 object-contain"
         />
 
         <h3 className="text-white text-[22px] font-semibold text-center">

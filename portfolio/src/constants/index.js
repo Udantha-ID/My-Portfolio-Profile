@@ -1,3 +1,4 @@
+
 import {
     mobile,
     backend,
@@ -54,7 +55,7 @@ import {
       icon: backend,
     },
     {
-      title: "Content Creator",
+      title: "Mobile Developer",
       icon: creator,
     },
   ];

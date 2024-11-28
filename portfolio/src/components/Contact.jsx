@@ -1,32 +1,15 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import contact from '../assets/contact.png'; // Ensure the path is correct
 
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
-
-  const particlesInit = async (main) => {
-    await loadFull(main);
-  };
-
-  const particleOptions = {
-    fullScreen: { enable: false },
-    particles: {
-      number: { value: 50, density: { enable: true, area: 800 } },
-      color: { value: "#ffffff" },
-      shape: { type: "circle" },
-      opacity: { value: 0.5 },
-      size: { value: 3, random: true },
-      move: { enable: true, speed: 0.6, direction: "none", outMode: "bounce" },
-    },
-  };
 
   const handleChange = (e) => {
     const { target } = e;
@@ -66,18 +49,18 @@ const Contact = () => {
   };
 
   return (
-    <div className="relative w-full xl:w-[1350px] h-[500px] xl:h-[720px] xl:mt-10 flex xl:flex-row gap-2 overflow-hidden px-100">
-      {/* Background Animation */}
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={particleOptions}
-        className="absolute top-0 left-0 w-full h-full z-0"
-      />
-
+    <div
+      className="relative w-full xl:w-[1350px] h-[500px] xl:h-[720px] xl:mt-10 flex xl:flex-row gap-2 overflow-hidden px-100"
+      style={{
+        backgroundImage: `url(${contact})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* Contact Form Section */}
       <motion.div
-        variants={slideIn("left", "tween", 0.3, 1)}
+        variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-1 xl:flex-[0.6] bg-gradient-to-r from-blue-900 to-black-800 p-10 rounded-xl shadow-xl transform transition-all hover:scale-105 z-10 relative"
       >
         <p className={`${styles.sectionSubText} text-yellow-400`}>Get in touch</p>
@@ -114,7 +97,7 @@ const Contact = () => {
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4 text-lg">Your Message</span>
             <textarea
-              rows={7}
+              rows={4}
               name="message"
               value={form.message}
               onChange={handleChange}
